@@ -1,7 +1,7 @@
 from ast import And
 import json
 import redis
-import configurations as config
+import util.configurations as config
 
 def getRedisConnection():     
     redisHostName = config.getRedisHostName()
