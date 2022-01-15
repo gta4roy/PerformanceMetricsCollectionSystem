@@ -1,4 +1,4 @@
-import imp
+import os
 import threading
 import psutil
 from util.redisconnection import setValueInRedis
@@ -19,7 +19,7 @@ class SystemLoadAvgFetch(threading.Thread):
 
     def fetchLoadAvg(self):
         logger.error("fetching CPU and performance")
-        loadAvgReading = psutil.getloadavg()        
+        loadAvgReading = os.getloadavg()        
         ldavg = LoadAvg()
         ldavg.onethminute = loadAvgReading[0]
         ldavg.fivethminute = loadAvgReading[1]
