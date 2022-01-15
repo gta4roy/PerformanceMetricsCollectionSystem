@@ -19,9 +19,7 @@ class SystemCPUFetch(threading.Thread):
         cpu.idlePercent = cpuUsageOsReading.idle
         cpu.systemPercent = cpuUsageOsReading.system
         cpu.userPercent = cpuUsageOsReading.user
-
         logger.error("CPU readings :"+ cpu.getJsonValues())
-        
         self.fetchCalls+=1
     
     
@@ -31,6 +29,4 @@ class SystemCPUFetch(threading.Thread):
             self.fetchCPU()
             sleep(self.timeinterval)
 
-
-    def stopTimer(self):
-        self.timer.cancel()
+        

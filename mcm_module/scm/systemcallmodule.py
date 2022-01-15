@@ -1,6 +1,8 @@
+
 import threading
 from scm.syscpu import SystemCPUFetch
 import util.logging as log
+import util.configurations as config
 
 logger = log.getLogger(__name__)
 class SystemCallModule(threading.Thread):
@@ -9,6 +11,8 @@ class SystemCallModule(threading.Thread):
 
     def run(self):
         logger.error("System Call Module Initialised ")
-        self.cpufetchThread =SystemCPUFetch(2,100)
+        self.readingInterval= config.getInterval()
+        self.totalReadings = config.getReadingCount()
+        self.cpufetchThread =SystemCPUFetch(int(self.readingInterval),int(self.totalReadings))
         self.cpufetchThread.start()
         self.cpufetchThread.join()
