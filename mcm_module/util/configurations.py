@@ -15,3 +15,12 @@ def getReadingCount():
     config.read('config.ini')
     return config['MCM_DEFAULT']['totalreadings']
 
+def getRedisHostName():
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    return config['REDIS']['hostname']
+
+def getRedisPort():
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    return config['REDIS']['port']
