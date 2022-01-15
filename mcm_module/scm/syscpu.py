@@ -26,7 +26,8 @@ class SystemCPUFetch(threading.Thread):
         cpu.date = date.today().strftime("%b-%d-%Y")
         cpu.timestamp = datetime.now().strftime("%H-%M-%S")
         hostname = socket.gethostname()
-        keyString = hostname+"-"+cpu.date+"-"+cpu.timestamp
+        keyString = "CPU-"+hostname+"-"+cpu.date+"-"+cpu.timestamp
+        cpu.key = keyString
         setValueInRedis(keyString,cpu.getJsonValues())
         logger.error("CPU readings :"+ cpu.getJsonValues())
         self.fetchCalls+=1
