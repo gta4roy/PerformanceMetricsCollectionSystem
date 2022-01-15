@@ -24,7 +24,7 @@ class LoadAvg:
         valuesDict[LoadAvg.FIVEMINUTH] = self.fivethminute
         valuesDict[LoadAvg.FIVETINTHMINUTH] = self.fivetheenthminute
         valuesDict[LoadAvg.TIMESTAMP] = self.timestamp
-        valuesDict[LoadAvg.KEY] = self.timestamp
+        valuesDict[LoadAvg.KEY] = self.key
         valuesDict[LoadAvg.DATE] = self.date
         return valuesDict
 

@@ -31,7 +31,7 @@ class CPU:
         valuesDict[CPU.IDLE] = self.idlePercent
         valuesDict[CPU.SYSTEM] = self.systemPercent
         valuesDict[CPU.TIMESTAMP] = self.timestamp
-        valuesDict[CPU.KEY] = self.timestamp
+        valuesDict[CPU.KEY] = self.key
         valuesDict[CPU.DATE] = self.date
         return valuesDict
 
