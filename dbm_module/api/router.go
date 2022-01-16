@@ -23,6 +23,10 @@ const (
 	HealthChecURL = "/health"
 
 	getAllSysCPUKeys = BaseURL + "/getsyscpukeys"
+
+	getALLSysLoadAvgKeys = BaseURL + "/getsysloadavgkeys"
+
+	getPerfValues = BaseURL + "/getperfvalues/{key}"
 )
 
 var routes = Routes{
@@ -31,6 +35,12 @@ var routes = Routes{
 	},
 	Route{
 		"getAllSysCPUKeys", "GET", getAllSysCPUKeys, handlerGetAllSysCPUKeys,
+	},
+	Route{
+		"getAllSysLOADAVGKeys", "GET", getALLSysLoadAvgKeys, handlerGetALLSysLoadAvgKeys,
+	},
+	Route{
+		"getPerfValues", "GET", getPerfValues, handlerGetPerfValues,
 	},
 }
 
